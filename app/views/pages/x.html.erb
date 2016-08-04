@@ -1,2 +1,12 @@
-<h1>Edgar Tello</h1>
-<p>Find me in app/views/pages/x.html.erb</p>
+<div class="jumbotron"></div>
+	<h1>Inicio</h1>
+
+	<p><%= flash[:notice]%></p>
+	<form action="<%= pages_save_form_path %>" method="POST">
+	<%= hidden_field_tag :authenticity_token,
+		form_authenticity_token %>
+		<label>Nombre</label><input name="q">
+		<label>E-mail</label><input name="r">
+		<label>Edad</label><input name="s">
+		<input type="submit" value="enviar">
+	</form>
